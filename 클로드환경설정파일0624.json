@@ -1,0 +1,210 @@
+{
+  "mcpServers": {
+    "energy-marketplace": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-fetch"],
+      "env": {
+        "ENERGY_API_KEY": "${ENERGY_API_KEY}",
+        "API_BASE_URL": "${ENERGY_API_BASE_URL}"
+      }
+    },
+    "renewable-energy-data": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-energy"],
+      "env": {
+        "RENEWABLE_API_KEY": "${RENEWABLE_API_KEY}"
+      }
+    },
+    "kosis-statistics": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-kosis"],
+      "env": {
+        "KOSIS_API_KEY": "${KOSIS_API_KEY}",
+        "KOSIS_BASE_URL": "${KOSIS_BASE_URL}"
+      }
+    },
+    "korea-statistics": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-statistics"],
+      "env": {
+        "STATISTICS_API_KEY": "${STATISTICS_API_KEY}"
+      }
+    },
+    "korea-public-data": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-publicdata"],
+      "env": {
+        "PUBLIC_DATA_API_KEY": "${PUBLIC_DATA_API_KEY}"
+      }
+    },
+    "google-maps": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-google-maps"],
+      "env": {
+        "GOOGLE_MAPS_API_KEY": "${GOOGLE_MAPS_API_KEY}"
+      }
+    },
+    "coordinate-system": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-coordinate"]
+    },
+    "spatial-analysis": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-spatial"]
+    },
+    "sqlite": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-sqlite", "--db-path", "${SQLITE_DB_PATH}"]
+    },
+    "csv-analyzer": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-csv"]
+    },
+    "excel-processor": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-excel"]
+    },
+    "data-transformer": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-data-transform"]
+    },
+    "puppeteer": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-puppeteer"]
+    },
+    "playwright-stealth": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@pvinis/playwright-stealth-mcp-server"
+      ]
+    },
+    "github-api": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "github-issues": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github-issues"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "github-pr": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-github-pr"],
+      "env": {
+        "GITHUB_TOKEN": "${GITHUB_TOKEN}"
+      }
+    },
+    "code-analyzer": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-code-analysis"]
+    },
+    "terminal": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@dillip285/mcp-terminal"
+      ],
+      "config": {
+        "allowedCommands": [
+          "npm",
+          "npx",
+          "node",
+          "git",
+          "python",
+          "pip",
+          "pipx",
+          "pipenv",
+          "poetry",
+          "pytest",
+          "tox",
+          "flake8",
+          "pylint",
+          "black",
+          "isort",
+          "mypy",
+          "coverage",
+          "cProfile",
+          "pyinstrument",
+          "ab",
+          "wrk",
+          "siege",
+          "locust",
+          "k6",
+          "hey",
+          "pytest-benchmark",
+          "curl",
+          "http",
+          "ls",
+          "dir",
+          "mysql"
+        ],
+        "defaultTimeout": 30000
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-filesystem",
+        "${FILESYSTEM_PATH}"
+      ]
+    },
+    "text-editor": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-text-editor", "${TEXT_EDITOR_PATH}"
+      ]
+    },    
+    "googleSearch": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "g-search-mcp"
+      ]
+    },
+    "context7-mcp": {
+      "command": "cmd",
+      "args": [
+        "/c",
+        "npx",
+        "-y",
+        "@smithery/cli@latest",
+        "run",
+        "@upstash/context7-mcp",
+        "--key",
+        "${CONTEXT7_MCP_KEY}"
+      ]
+    }
+  },
+  "mcpClient": {
+    "enabled": true,
+    "triggerKeywords": {
+      "edit": [
+        "text-editor"
+      ],
+      "write": [
+        "text-editor"
+      ],
+      "append": [
+        "text-editor"
+      ],
+      "replace": [
+        "text-editor"
+      ],
+      "read": [
+        "filesystem"
+      ],
+      "list": [
+        "filesystem"
+      ],
+      "search": [
+        "filesystem"
+      ]
+    }
+  }
+}
